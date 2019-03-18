@@ -1,10 +1,15 @@
 version: '2'
 services:
-  web:
+  wtf:
     build: .
-    ports:
-      - "4000:4000"
-    expose:
-      - "4000"
     command:
-    - ./run.sh
+      - ./run.sh
+  # web:
+  #   privileged: true
+  #   build: .
+  #   ports:
+  #     - "4000:4000"
+  #   expose:
+  #     - "4000"
+  #   command:
+  #   - ./run.sh
