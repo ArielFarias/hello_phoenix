@@ -14,8 +14,6 @@ WORKDIR /app
 RUN mix local.hex --force
 RUN mix local.rebar --force
 RUN mix archive.install --force hex phx_new 1.4.2
-RUN mix deps.get
-RUN mix do compile
 
 EXPOSE 4000
 
