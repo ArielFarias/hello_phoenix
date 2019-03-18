@@ -5,12 +5,12 @@
 set -e
 
 # Ensure the app's dependencies are installed
-mix deps.get
+exec mix deps.get
 
 echo "\nTesting the installation..."
 # "Proove" that install was successful by running the tests
-mix test
+exec mix test
 
 echo "\n Launching Phoenix web server..."
 # Start the phoenix web server
-mix phx.server
+exec mix phx.server
