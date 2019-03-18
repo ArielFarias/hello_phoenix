@@ -2,20 +2,11 @@
 # Adapted from Alex Kleissner's post, Running a Phoenix 1.3 project with docker-compose
 # https://medium.com/@hex337/running-a-phoenix-1-3-project-with-docker-compose-d82ab55e43cf
 
-# set -e
+#!/bin/bash
+set -e
 
-# # Ensure the app's dependencies are installed
-# mix deps.get
+if [ "$1" = 'server' ]; then
+  MIX_ENV=prod PORT=4000 mix phoenix.server
+fi
 
-# echo "\nTesting the installation..."
-# # "Proove" that install was successful by running the tests
-# mix test
-
-# echo "\n Launching Phoenix web server..."
-# # Start the phoenix web server
-# mix phx.server
-
-while : ; do
-  echo "waiting"
-  sleep 60
-done
+exec "$@"
